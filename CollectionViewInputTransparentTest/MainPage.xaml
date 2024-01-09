@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CollectionViewInputTransparentTest.MainPage"             
+             xmlns:local="clr-namespace:CollectionViewInputTransparentTest"
+             x:DataType="local:MainPageModel">
+    <ContentPage.Resources>
+        <Style x:Name="AutoInputTransparent" TargetType="CollectionView">
+            <Style.Triggers>
+                <Trigger TargetType="CollectionView" Property="IsEnabled" Value="False">
+                    <Setter Property="Opacity" Value="0.5" />
+                    <Setter Property="InputTransparent" Value="true" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </ContentPage.Resources>
+     <Grid RowDefinitions="*,*,*" ColumnDefinitions="*,*">
+        <Button Grid.Row="0" Grid.Column="0" Text="IsEnabled=False" Command="{Binding IsEnabledFalseCollectionViewCommand}" HorizontalOptions="Center" VerticalOptions="Center" />
+        <Button Grid.Row="0" Grid.Column="1" Text="IsEnabled=True" Command="{Binding IsEnabledTrueCollectionViewCommand}" HorizontalOptions="Center" VerticalOptions="Center" />
+
+        <CollectionView Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Items}" SelectionMode="Single" IsEnabled="{Binding IsCollectionViewEnabled}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">                    
+                        <Label Text="{Binding .}" TextColor="Black" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+         <CollectionView Grid.Row="1" Grid.Column="1" Style="{StaticResource AutoInputTransparent}"  ItemsSource="{Binding Items}" SelectionMode="Single" IsEnabled="{Binding IsCollectionViewEnabled}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">                    
+                        <Label Text="{Binding .}" TextColor="Black" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+         
+         <CollectionView x:Name="NonStyledCollectionViewWithIsEnabled" Grid.Row="2" Grid.Column="0" ItemsSource="{Binding Items}" SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">                    
+                        <Label Text="{Binding .}" TextColor="Black" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <CollectionView x:Name="NonStyledCollectionViewWithInputTransparent" Grid.Row="2" Grid.Column="1" ItemsSource="{Binding Items}" SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">                    
+                        <Label Text="{Binding .}" TextColor="Black" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+
+</ContentPage>
