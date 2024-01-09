@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 25.0.1706.7
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionViewInputTransparentTest", "CollectionViewInputTransparentTest\CollectionViewInputTransparentTest.csproj", "{D540D3B1-8F86-4DEF-81B7-BB57C0085AAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollectionViewInputTransparentTest", "CollectionViewInputTransparentTest\CollectionViewInputTransparentTest.csproj", "{D540D3B1-8F86-4DEF-81B7-BB57C0085AAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +13,7 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{D540D3B1-8F86-4DEF-81B7-BB57C0085AAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D540D3B1-8F86-4DEF-81B7-BB57C0085AAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D540D3B1-8F86-4DEF-81B7-BB57C0085AAD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{D540D3B1-8F86-4DEF-81B7-BB57C0085AAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D540D3B1-8F86-4DEF-81B7-BB57C0085AAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection

@@ -5,7 +5,7 @@
              xmlns:local="clr-namespace:CollectionViewInputTransparentTest"
              x:DataType="local:MainPageModel">
     <ContentPage.Resources>
-        <Style x:Name="AutoInputTransparent" TargetType="CollectionView">
+        <Style x:Key="AutoInputTransparent" TargetType="CollectionView">
             <Style.Triggers>
                 <Trigger TargetType="CollectionView" Property="IsEnabled" Value="False">
                     <Setter Property="Opacity" Value="0.5" />
