@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CollectionViewInputTransparentTest.MainPage"             
              xmlns:local="clr-namespace:CollectionViewInputTransparentTest"
+             xmlns:system="clr-namespace:System"
              x:DataType="local:MainPageModel">
     <ContentPage.Resources>
         <Style x:Key="AutoInputTransparent" TargetType="CollectionView">
@@ -20,7 +21,7 @@
 
         <CollectionView Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Items}" SelectionMode="Single" IsEnabled="{Binding IsCollectionViewEnabled}">
             <CollectionView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="system:String">
                     <Grid Padding="10">                    
                         <Label Text="{Binding .}" TextColor="Black" />
                     </Grid>
@@ -30,7 +31,7 @@
 
          <CollectionView Grid.Row="1" Grid.Column="1" Style="{StaticResource AutoInputTransparent}"  ItemsSource="{Binding Items}" SelectionMode="Single" IsEnabled="{Binding IsCollectionViewEnabled}">
             <CollectionView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="system:String">
                     <Grid Padding="10">                    
                         <Label Text="{Binding .}" TextColor="Black" />
                     </Grid>
@@ -40,7 +41,7 @@
          
          <CollectionView x:Name="NonStyledCollectionViewWithIsEnabled" Grid.Row="2" Grid.Column="0" ItemsSource="{Binding Items}" SelectionMode="Single">
             <CollectionView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="system:String">
                     <Grid Padding="10">                    
                         <Label Text="{Binding .}" TextColor="Black" />
                     </Grid>
@@ -50,7 +51,7 @@
 
         <CollectionView x:Name="NonStyledCollectionViewWithInputTransparent" Grid.Row="2" Grid.Column="1" ItemsSource="{Binding Items}" SelectionMode="Single">
             <CollectionView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="system:String">
                     <Grid Padding="10">                    
                         <Label Text="{Binding .}" TextColor="Black" />
                     </Grid>
